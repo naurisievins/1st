@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Drip & Animal Farm tracking app</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+  <meta name="description" content="This web application is made for you to help you track your progress and gather additional useful information about Drip Fountain, Drip Garden and Piggy Bank.">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/title.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3js-cdn@latest/web3.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<div id="gardenTitle" class="title">
+  <h1>Drip Garden</h1>
+</div>
+
+<div id="dripTitle" class="title">
+  <h1>Drip Faucet</h1>
+</div>
+
+<div id="piggyTitle" class="title">
+  <h1>Piggy Bank</h1>
+</div>
+
+<div id="homeTitle" class="title">
+  <h1>Home</h1>
+</div>
+
+<div id="donateTitle" class="title">
+  <h1>Donation</h1>
+</div>
+
+  <ul id="navi">
+    <li><div class="navbut" onclick="openTab('homeTitle', 'homeContent', this, 'rgb(46 59 68 / 20%)')" id="defaultOpen"><i class="fas fa-home"></i><span class="hide"> Home</span></div></li>
+    <li><div class="navbut" onclick="openTab('gardenTitle', 'gardenContent', this, 'rgb(90 237 5 / 4%)')"><i class="fab fa-pagelines"></i><span class="hide"> Drip Garden</span></div></li>
+    <li><div class="navbut" onclick="openTab('dripTitle', 'dripContent' ,this, 'rgb(0 153 255 / 4%)')"><i class="fas fa-tint"></i><span class="hide"> Drip Faucet</span></div></li>
+    <li><div class="navbut" onclick="openTab('piggyTitle', 'piggyContent' ,this, 'rgb(213 67 158 / 4%)')"><i class="fas fa-piggy-bank"></i><span class="hide"> Piggy Bank</span></div></li>
+    <li>
+      <div class="dropdown">
+        <div class="dropbtn dropbtn2" onclick="dropMenu()"><span class="hide dropbtn2">More </span><i class="fa fa-caret-down dropbtn2"></i></div>
+          <div class="dropdown-content" id="myDropdown">
+            <!--DROPDOWN DONATE BUTTON -->
+              <div class="dropdownbtn" id="donclick" onclick="openTab('donateTitle', 'donateContent', this, 'rgba(233, 173, 8, 0.22)')">Donate & Support</div>
+          </div>
+      </div>
+    </li>
+  </ul>
+</header>
+
+<main>
+
+<div class="token-prices">
+  <img src="img/drip.PNG" width="15" height="15" class="toekn" alt="drip"> Drip (dex): <span id="drip"></span>$
+  <img src="img/pigs.PNG" width="15" height="15" class="toekn" alt="pigs"> Pigs: <span id="pigs"></span>$
+  <img src="img/dogs.PNG" width="15" height="15" class="toekn" alt="dogs"> Dogs: Paused<!--<span id="dogs"></span>$-->
+  <img src="img/breap.PNG" width="15" height="15" class="toekn" alt="br34p"> BR34P: <span id="breap"></span>$
+  <img src="img/reap.PNG" width="15" height="15" class="toekn" alt="r34p"> R34P: <span id="reap"></span>$
+</div>
+
+<div class="card" id="doncard">
+  <span>This application is 100% free! If you find it useful and would like to support further development you can make a</span>
+    <span id="donclick" onclick="openTab('donateTitle', 'donateContent', this, 'rgba(233, 173, 8, 0.22)')" style="cursor: pointer;"><u><strong>donation</u></strong></span>
+  <span style="margin-left:-4px;">. Any donation is much appreciated! Enjoy!</span>
+
+</div>
+
+<div id="homeContent" class="content">
+  <div class="card">
+    <div class="card2" style="margin-top:5px; color: white;">
+      <h3 style="margin-top:0;">Welcome</h3>
+        <div class="card3">
+        This web application is made for you to help you track your progress and gather additional useful
+        information about Drip Fountain, Drip Garden and Piggy Bank.
+        </div>
+
+      <h3>Official</h3>
+        <div class="card3">
+          Drip Network - <a href="https://drip.community/faucet?buddy=0xF82410De7CB6D13B4Cae885c8C8EB2836567348e" target="_blank">drip.community</a><br>
+          Drip whitepaper - <a href="https://drip.community/docs/DRIP_LIGHTPAPER_v0.8_Lit_Version.pdf" target="_blank">Whitepaper</a><br>
+          <span style="font-size:small">Token: DRIP, Address: 0x20f663CEa80FaCE82ACDFA3aAE6862d246cE0333</span><hr>
+          Drip Garden - <a href="https://theanimal.farm/garden" target="_blank">theanimal.farm/garden</a><br>
+          <span style="font-size:small">Drip Garden is part of Animal Farm</span><hr>
+          Piggy Bank - <a href="https://theanimal.farm/piggybank/0xF82410De7CB6D13B4Cae885c8C8EB2836567348e" target="_blank">theanimal.farm/piggybank</a><br>
+          <span style="font-size:small">Piggy Bank is part of Animal Farm</span><hr>
+          Animal Farm - <a href="https://theanimal.farm" target="_blank">theanimal.farm</a><br>
+          Animal Farm Rebirth (V2) - <a href="https://animalfarm.app" target="_blank">animalfarm.app</a><br>
+          Animal Farm / Drip Garden whitepaper - <a href="https://theanimal.farm/docs/The_Animal_Farm_Whitepaper.pdf" target="_blank">Whitepaper</a><br>
+          Animal Farm Rebirth (V2) whitepaper - <a href="https://animalfarm.app/docs/Animal_Farm_Rebirth_-_Migration__White_Paper_002.pdf" target="_blank">Whitepaper</a><br>
+          <span style="font-size:small">Token: PIGS V2, Address: 0x9a3321E1aCD3B9F6debEE5e042dD2411A1742002 / Token: DOGS V2, Address: Coming soon</span><hr>
+        </div>
+
+      <h3>Stay safe!</h3>
+        <div class="card3">
+          This is read-only app. NEVER share your Secret Recovery Phrase / Seed Phrase / Private Key with anyone.
+        </div>
+        <h3>Contacts</h3>
+        <div class="card3">
+          If you have any questions, suggestions or complaints you can find me on Telegram:
+          <a href="https://t.me/metalnr" target="_blank">metalnr</a>.
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="gardenContent" class="content">
+
+  <!--Garden data-->
+  <div id="garden">
+    <div class="mainrow" style="width: 100%;">
+      <div class="col-garden">
+        <div class="card" style="margin-right:5px;">
+          <div class="mainrow" style="margin-bottom:5px; color:rgb(16 14 14); font-weight:bold; letter-spacing: 8px">Your Garden <span style="font-size:small; letter-spacing:normal;">{{wallet_address}}</span></div>
+          <div class="mainrow card2" style="margin-bottom:1px;">
+            <div class="row">Wallet address:
+            <div style="display:inline-block;"><input type="text" id="walletAddress" placeholder="Paste Here">
+              <button type="button" id="click" v-on:click="submit"> Go! </button>
+            </div>
+              <span style="color:red; font-size: small !important;"><br>{{msg}}</span>
+          </div>
+            <div class="row">
+              <span>Drip/Busd LP balance: <span style="color:rgb(172, 178, 180); font-size:14px;">{{lp_in_wallet}} LP</span><span style="color:rgb(172, 178, 180);"> / {{lp_value_in_wallet}} $</span></span>
+            </div>
+          </div>
+          <div class="mainrow" style="color:rgb(16 14 14); font-weight:bold; letter-spacing: 8px">Contract Info</div>
+          <div class="mainrow card2">
+
+            <div class="col">
+
+              <div class="col">
+                <div class="row" style="width:150px;">Contract balance:</div>
+                <div class="row col-result" style="width:150px;">{{contract_balance}} Lp</div>
+              </div>
+
+              <br>
+              <div class="col">
+                <div class="row" style="width:150px;">Drip/Busd Lp:</div>
+                <div class="row col-result" style="width:150px;">{{drip_busd_lp_price}} $</div>
+              </div>
+
+              <br>
+              <div class="col">
+                <div class="row" style="width:150px;">2 592 000 seeds<br>= 1 plant price:</div>
+                <div class="row col-result" style="width:150px; line-height: 40px;">{{plant_price}} $ / <span style="font-size:14px;">{{plant_value_lp_round}} LP</span></div>
+              </div>
+
+            </div>
+          </div>
+          <div class="mainrow" style="color:rgb(16 14 14); font-weight:bold; letter-spacing: 8px">Your Stats</div>
+
+          <div class="mainrow">
+
+            <div class="table-icon card2 hide" style="color:rgb(172, 178, 180);  border-right: 1px solid rgb(242 255 255 / 42%);">
+              <div class="row" style="text-align:center; padding: 12px 0 0 0;"><i class="fab fa-pagelines"></i><hr style = "margin: 11px 0 9px 0;"></div>
+              <div class="row" style="text-align:center; padding: 16px 0 0 0;"><i class="fas fa-seedling"></i><hr style = "margin: 11px 0 0 0;"></div>
+              <div class="row" style=" text-align:center; padding: 25px 0 0 0;"><i class="fas fa-dollar-sign"></i></div>
+            </div>
+
+            <div class="col card2" style="min-width:150px; width:130px; margin-right:0 !important; margin-left:0 !important;  border-right: 1px solid rgb(242 255 255 / 42%);">
+              <div class="row">Plants grown: <i class="fas fa-caret-right"  style="float:right;"></i></div>
+              <div class="row">Plants ready: <i class="fas fa-caret-right"  style="float:right;"></i></div>
+              <div class="row">Plants per day: <i class="fas fa-caret-right"  style="float:right;"></i><hr></div>
+              <div class="row">Seeds available: <i class="fas fa-caret-right"  style="float:right;"></i></div>
+              <div class="row">Seeds per day: <i class="fas fa-caret-right"  style="float:right;"></i></div>
+              <div class="row">Seeds Lost: <i class="fas fa-caret-right"  style="float:right;"></i><hr></div>
+              <div class="row">Available value: <i class="fas fa-caret-right"  style="float:right;"></i></div>
+              <div class="row">Value per day: <i class="fas fa-caret-right"  style="float:right;"></i></div>
+              <div class="row">Garden value: <i class="fas fa-caret-right"  style="float:right;"></i></div>
+
+            </div>
+            <div class="col-result card2 garden-result-col" style="margin-left:0 !important; overflow: hidden; width: 35%;">
+              <div class="row" style="font-weight:bold;">{{plants}}</div>
+              <div class="row">{{plants_ready_round}}</div>
+              <div class="row">{{plants_per_day}}<hr></div>
+              <div class="row">{{seeds_available_split}}</div>
+              <div class="row">{{seeds_per_day}}</div>
+              <div class="row">{{seeds_lost_split}} /<span style="font-size:14px;"> {{seeds_lost_value}} $</span><hr></div>
+              <div class="row" >{{available_value}} $ / <span style="font-size:14px;">{{seeds_value_lp_round}} LP</span></div>
+              <div class="row">{{value_per_day}} $</div>
+              <div class="row">{{garden_value}} $</div>
+            </div>
+          </div mainrow>
+        </div>
+      </div>
+
+        <!--Next plants-->
+        <div class="col col-timer">
+          <div class="card" style="height:572px; margin-right:5px;">
+            <div class="mainrow" style="letter-spacing: 8px; font-weight: bold; color:rgb(16 14 14)">Plant Timer</div>
+              <div class="mainrow card2" style="margin-bottom:1px;">Time to the next plant: <span style="color:rgb(46, 109, 172);">{{next_plant}} </span><span><i class="far fa-clock"></i></span>
+                <br><span>Plant production: <span style="color:rgb(172, 178, 180);">{{plant_time}}</span></span>
+                <span><br>Plant progress: <div id="myProgress"><span id="progress"></span>
+                <div id="myBar"></div>
+              </div></span>
+
+            </div>
+            <div style="overflow-y: scroll !important; overflow-x: none; height:441px;">
+              <div class="mainrow card2">
+                <div class="col">
+                <p v-for="data in plantz" style="margin-top:0;"><span class="hide-plant">{{ data.plant }} </span>({{ data.nr }}) :</p>
+                </div>
+                <div class="col-result">
+                <p v-for="data in plantz" style="margin-top:0;">{{ data.time }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="dripContent" class="content">
+  <!-- <div id="dripVUE">
+    <span style="color:white;">Total drip players: {{ players }}</span><br>
+    <span style="color:white;" id="ts"></span> <span style="color:white;">{{ts}}</span>
+  </div>
+  -->
+
+  <div class="card"><strong>in progress...</strong></div>
+</div>
+
+<div id="piggyContent" class="content">
+  <div class="card"><strong>in progress...</strong></div>
+</div>
+
+<div id="donateContent" class="content">
+  <div class="card">
+    <div class="card2" style="margin-top:5px; color: white;">
+      <h3 style="margin-top:0;">Support with donation</h3>
+      <div class="card3">
+        Address for donations:
+          <div style="border:2px solid rgb(153, 149, 149); margin: 5px; max-width:480px; min-width:220px; border-radius:5px; overflow-x:auto !important; overflow-x:scroll; line-height:35px;">
+            <input type="text" id="myInput" value="0xf522521eB698D2DCF745a8BE9366CfcD2C8b16BB" style="width:330px; height:20px; margin-left:5px;" disabled>
+            <button class="addressButton" id="addbtn" style="width:120px;" onclick="copyToClipboard('#a')">Copy address</button>
+            <span id="a">0xf522521eB698D2DCF745a8BE9366CfcD2C8b16BB</span>
+
+          </div>
+          This is Metamask address and it is prefered that you make a donation in
+          <img src="img/bnb.PNG" width="15" height="15" class="toekn"> BNB,
+          <img src="img/busd.PNG" width="15" height="15" class="toekn"> BUSD or
+          <img src="img/drip.PNG" width="15" height="15" class="toekn" style="line-height: -50px;"> DRIP on Binance Smart Chain.
+        </div>
+          <h3>Support by using these refferal links</h3>
+        <div class="card3">
+          <span><i style="color:darkcyan;" class="fas fa-tint"></i> Drip Faucet - <a href="https://drip.community/faucet?buddy=0xF82410De7CB6D13B4Cae885c8C8EB2836567348e" target="_blank">drip.community/faucet?buddy=0xF82410De7CB6D13B4Cae885c8C8EB2836567348e</a><br></span>
+          <span><i style="color:green;" class="fab fa-pagelines"></i> Drip Garden - <a href="https://theanimal.farm/referrals/0xF82410De7CB6D13B4Cae885c8C8EB2836567348e" target="_blank">theanimal.farm/referrals/0xF82410De7CB6D13B4Cae885c8C8EB2836567348e</a><br></span>
+          <span><i style="color:hotpink;" class="fas fa-piggy-bank"></i> Piggy Bank - <a href="https://theanimal.farm/piggybank/0xF82410De7CB6D13B4Cae885c8C8EB2836567348e" target="_blank">theanimal.farm/piggybank/0xF82410De7CB6D13B4Cae885c8C8EB2836567348e</a><br></span>
+        </div>
+        <h3>Thank you! ☺</h3>
+        <div class="card3">
+          Thank you for your support! By supporting development of tihs page you support
+          whole Drip ecosystem as well - most of donated funds stays in the Drip ecosystem!
+        </div>
+    </div>
+</div>
+
+</main>
+
+<footer>
+  All Rights Reserved 2022
+</footer>
+
+ <script src="script/garden.js"></script>
+ <script src="script/prices.js"></script>
+ <script src="script/util.js"></script>
+ <!-- <script src="script/drip.js"></script> -->
+
+</body>
+</html>

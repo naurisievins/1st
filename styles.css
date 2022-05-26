@@ -1,0 +1,449 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgb(46, 109, 172);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(46, 109, 172, 0.349);
+}
+
+#myProgress {
+    border-radius: 0px 7px 7px 0px;
+    width: 93%;
+    min-width: 200px;
+    background-color: rgb(184, 190, 186);
+    text-align: center;
+    line-height: 16px;
+    border: 1px solid rgb(46, 109, 172);
+    margin-left:1px;
+    margin-top: 5px;
+    margin-bottom: 3px;
+  }
+
+  #myBar {
+    border-radius: 0px 7px 7px 0px;
+    font-weight: bold;
+    font-size: 15px;
+    color: hsla(0, 0%, 4%, 0.781);
+    width: 0%;
+    height: 15px;
+    background-color: rgb(46, 109, 172);
+  }
+
+  #doncard a:link, #doncard  a:visited, #doncard a:hover, #doncard a:active {
+    color: black;
+    text-decoration: none;
+  }
+  #doncard {
+    font-size:15px;
+    margin:14px 0 0px 0px;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    overflow: scroll;
+    overflow: overlay;
+    background-color:  #0b0c0c;
+    width: 98%;
+    min-width: 290px;
+    margin:auto;
+    padding: 5px;
+  }
+
+  main {
+    padding: 0;
+    width: 70%;
+    margin: auto;
+    min-height: calc(87vh - 54px);
+  }
+
+  #navi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    font-weight: bold;
+  }
+
+  .navbut {
+    float:left;
+    text-align: center;
+    border-radius:  0 0 5px 5px;
+    background-color: rgb(98, 114, 114);
+    color: rgb(219, 210, 210);
+    cursor: pointer;
+    padding: 8px 6px;
+    font-size: 17px;
+    width: 130px;
+    min-width: 130x;
+    margin-right: 1px;
+    border-right: 2px solid rgb(78, 81, 83);
+    border-left: 2px solid rgb(78, 81, 83);
+    border-bottom: 2px solid rgb(78, 81, 83);
+    outline: none;
+  }
+
+  .navbut:hover {
+    background-color: rgb(148, 168, 168);
+  /*  box-shadow: inset 0 0 0 1000px rgba(220, 223, 220, 0.308); */
+  }
+
+  .title {
+    border-radius: 5px 5px 0 0;
+    color: #bdbdb9;
+    font-size: 25px;
+    display: none;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .title h1 {
+    margin:0;
+  }
+
+  .content {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+
+  #homeTitle {background-color: rgb(46 59 68 / 20%);}
+  #gardenTitle {background-color:rgb(90 237 5 / 4%);}
+  #dripTitle {background-color:rgb(0 153 255 / 4%);}
+  #piggyTitle {background-color:rgb(213 67 158 / 4%);}
+  #donateTitle {background-color:rgb(46 59 68 / 20%);}
+
+  #walletAddress {
+    background-color: rgba(206, 201, 201, 0.795);
+    width: 50% !important;
+    min-width: 220px;
+  }
+
+  .dropdown {
+    border-right: 2px solid rgb(78, 81, 83);
+    border-left: 2px solid rgb(78, 81, 83);
+    border-bottom: 2px solid rgb(78, 81, 83);
+    float:left;
+    overflow: hidden;
+    border-radius:  0 0 5px 5px;
+  }
+  .dropdown .dropbtn {
+    background-color: rgb(98, 114, 114);
+    width: 80px;
+    font-size: 17px;
+    padding: 8px 6px;
+    text-align: center;
+    color: rgb(219, 210, 210);
+    cursor: pointer;
+  }
+  .dropdown .dropbtn:hover {
+    background-color: rgb(148, 168, 168)
+  }
+  .dropdown-content {
+    font-size: 15px;
+    border-radius: 0 0 5px 5px;
+    display: none;
+    position: absolute;
+    background-color: #868585;
+    min-width: 142px;
+    overflow:auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdownbtn {
+    cursor: pointer;
+    padding: 6px 6px;
+    float: none;
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: normal !important;
+  }
+  .dropdownbtn:hover {background-color: #ddd;}
+
+  .show {
+    display: block;
+  }
+
+.card {
+  font-size: 16px;
+  border-radius: 3px;
+  background: #6e7576;
+  margin-top: 0px;
+  padding: 2px 6px;
+  height: auto;
+  overflow: hidden;
+}
+
+.card2 {
+  font-size: 16px;
+  color:#9f701a;
+  border-radius: 5px;
+  background: #161616;
+  padding: 6px 6px !important;
+  overflow:hidden;
+  margin-bottom: 5px !important;
+}
+
+.card3 {
+  color:rgb(172, 178, 180);
+  border-radius: 5px;
+  background: rgb(82 92 96 / 12%);
+  padding: 6px 6px !important;
+  overflow:hidden;
+  margin: 5px 0;
+  line-height:30px;
+}
+.card3 a:link, .card3 a:visited, .card3 a:active {
+  color:rgb(201, 205, 206);
+}
+.card3 a:hover {color:rgb(223, 238, 243);}
+
+h3 {
+  margin: 8px;
+  color: #9f701a;
+}
+
+#click {
+  width: 50px;
+  line-height:16px;
+  border-radius:3px;
+  cursor: pointer;
+  background-color:rgb(188, 187, 189);
+  border:1px solid rgb(100, 99, 99);
+  margin-left: 2px;
+  margin-bottom:2px;
+  font-weight: bold;
+}
+#click:hover {background-color: rgb(150, 149, 151);}
+#click:active {font-size: 12px;}
+
+/* Coppy donation address button */
+.addressButton {
+  border-radius:3px;
+  cursor: pointer;
+  background-color:rgb(188, 187, 189);
+  border:1px solid rgb(100, 99, 99);
+  margin-left: 5px;
+  margin-bottom:2px;
+  font-weight: bold;
+}
+.addressButton:hover {background-color: rgb(150, 149, 151);}
+
+#a {
+  display:none;
+}
+
+.mainrow {
+  overflow:hidden;
+  display:block;
+  margin-left: 2px;
+  margin-top: 3px;
+}
+
+.row {
+  min-height: 20px;
+  padding: 4px 0;
+  display:block;
+  float:left;
+  width: 97%;
+  margin-left: 2px;
+}
+
+.col {
+  display:block;
+  float:left;
+  overflow: hidden;
+}
+
+.col-garden {
+  display:block;
+  float:left;
+  overflow: hidden;
+  width: calc(100% - 350px);
+  min-width: 317px;
+}
+
+.col-timer {
+  width: 350px;
+  display:block;
+  float:left;
+  overflow: hidden;
+}
+
+.table-icon {
+  margin-right: 0 !important;
+  float:left;
+  width:75px;
+  font-size:53.5px;
+  height: 286px;
+}
+
+.col-result {
+  color: rgb(172, 178, 180) !important;
+  display:block;
+  float:left;
+}
+
+.token-prices {
+  overflow: auto;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color:rgba(64, 68, 68, 0.493);
+  color:#bdbdb9;
+  text-align:center;
+  margin-top: 5px;
+}
+
+.token-prices img {
+  padding-left: 10px;
+  margin-bottom: -3px;
+}
+
+footer {
+  border-radius: 3px;
+  left:20px;
+  right: 20px;
+  margin-top: 5px;
+  color:#bdbdb9;
+  background-color:rgb(22 22 22 / 36%);
+  text-align: center;
+  padding: 14px 16px;
+}
+
+@media only screen and (max-width: 1660px) {
+    main {
+      width:80%;
+      margin: auto;
+    }
+  #navi {
+    width: 80%;
+  }
+
+  .dropdown {
+    margin-right: 15%;
+  }
+  .lang-btn {
+    float:right;
+  }
+}
+
+@media only screen and (max-width:1296px) {
+  main {
+    width:90%;
+    margin: auto;
+  }
+  .dropdown {
+    margin-right: 10%;
+  }
+  #navi {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width:1060px) {
+  main {
+    width:100%;
+    margin: auto;
+  }
+  .dropdown {
+    margin-right: 1%;
+  }
+  #navi {
+    padding-left: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    list-style-type: none;
+    overflow: hidden;
+    font-weight: bold;
+  }
+  .navbut {
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 788px) {
+
+  body {
+    padding: 0;
+  }
+  main {
+    width:100%;
+    margin: auto;
+  }
+  .hide {
+    display:none;
+  }
+  .dropdown .dropbtn {
+    width: 30px;
+  }
+  .navbut {
+    width: 30px;
+  }
+  .lang-btn {
+    float:right !important;
+    padding:4px 4px;
+    margin-top: 4px;
+    border-radius: 7px;
+    text-decoration: none;
+    color:rgb(209, 204, 204);
+    border:3px solid grey;
+  }
+  .col-timer {
+    width:100% !important;
+  }
+
+  .col-garden {
+    margin-bottom: 15px;
+    width: 100% !important;
+  }
+
+  .garden-result-col {
+    width: calc(100% - 163px) !important;
+  }
+  .card {
+    padding: 2px !important;
+  }
+  .card2 {
+    padding: 3px !important;
+  }
+}
+
+@media only screen and (max-width: 305px) {
+
+  #navi {
+    display: block;
+    float:left !important;
+  }
+  .hide-plant {
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  body {
+    overflow-x: scroll !important;
+  }
+}
