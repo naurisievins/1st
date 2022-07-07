@@ -1,5 +1,7 @@
 # Crypto tracker
 
+My first project overall.
+
 This web application gathers data from blockchain by public wallet address.
 
 Used for "The Animal Farm" https://animalfarm.app/
