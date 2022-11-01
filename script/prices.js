@@ -20,9 +20,8 @@ function getDripPrice() {
   setTimeout(getPigsPrice, 100);
   setInterval(getPigsPrice, 2000);
 
-    /*
   function getDogsPrice() {
-    $.get("https://api.pancakeswap.info/api/v2/tokens/0xDBdC73B95cC0D5e7E99dC95523045Fc8d075Fb9e", function(data) {
+    $.get("https://api.pancakeswap.info/api/v2/tokens/0x198271b868daE875bFea6e6E4045cDdA5d6B9829", function(data) {
       let price =  data.data.price;
       price = Math.round(price * 100) / 100;
       document.getElementById("dogs").innerHTML = price;
@@ -30,7 +29,6 @@ function getDripPrice() {
   }
   setTimeout(getDogsPrice, 100);
   setInterval(getDogsPrice, 2000);
-  */
 
   function getBreapPrice() {
     $.get("https://graphs.coinpaprika.com/currency/data/br34p-br34p/1y/?quote=usd", function(data) {
